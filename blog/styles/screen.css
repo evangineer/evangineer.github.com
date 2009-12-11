@@ -1,0 +1,202 @@
+@import 'common.css';
+
+body
+{
+    margin              : auto; /* center horizontally */
+    max-width           : 36em;
+    _width              : 36em; /* for IE6 */
+    padding             : 0.5em;
+}
+
+/* hyperlinks */
+
+    a:link
+    {
+        color           : #0000FF;
+        text-decoration : none;
+    }
+
+    a:visited
+    {
+        color           : #C71585;
+        text-decoration : none;
+    }
+
+    a:hover
+    {
+        color           : #FF0000;
+        text-decoration : underline;
+    }
+
+    a:target
+    {
+        color           : #FF0000;
+        font-weight     : bold;
+    }
+
+/* styles for config/html.erb */
+
+    /* the main blog navigation menu */
+    .navigation
+    {
+        text-align      : center;
+        margin-bottom   : 3em;
+    }
+
+    /* the navigation item corresponding to the current web page */
+    .navigation .current
+    {
+        padding-bottom  : 0.5em;
+        border-bottom   : 5px solid #FFA500;
+    }
+
+		.sidebar{
+				border: 1px solid black;
+				background: grey;
+				width: 200px;
+				height: 400px;
+				padding: 10px; 
+				position: absolute;
+				right: 1px;
+				top: 5px
+		}
+		
+/* styles for config/entry.erb */
+
+    .entry
+    {
+        margin-top      : 4em;
+    }
+
+    /* title of the blog entry */
+    .entry > .name
+    {
+        font-size       : 1.6em;
+    }
+
+    .entry .name
+    {
+        _display        : block; /* for IE6 */
+    }
+
+    .entry > .name a:link,
+    .entry > .name a:visited
+    {
+        color           : #000000;
+    }
+
+    .entry .name a:link,
+    .entry .name a:visited
+    {
+        _color          : #000000; /* for IE6 */
+    }
+
+    /* content of the blog entry */
+    .entry .body
+    {
+    }
+
+    .entry .body > img
+    {
+        margin          : 1em;
+    }
+
+    /* the "Read more..." link */
+    .entry .more
+    {
+        float           : right;
+        margin-left     : 2em;
+        margin-bottom   : 2em;
+    }
+
+    /* information about the blog entry */
+    .entry .info
+    {
+        font-size       : smaller;
+    }
+
+/* additional styles for config/entry.erb (when @solo is true)
+    (that is, when the entry is displayed alone, on its own page) */
+
+    .entry-solo
+    {
+    }
+
+    .entry-solo .toc
+    {
+    }
+
+    .entry-solo .body
+    {
+    }
+
+    .entry-solo .info
+    {
+    }
+
+/* styles for config/listing.erb */
+
+    .listing
+    {
+    }
+
+    .listing > .name
+    {
+    }
+
+/* styles for config/section.erb */
+
+    .section
+    {
+    }
+
+    .section > .name
+    {
+    }
+
+/* styles for config/chapter.erb */
+
+    .chapter
+    {
+    }
+
+    .chapter > .name
+    {
+    }
+
+    /* tag cloud */
+    .chapter .cloud
+    {
+        padding         : 0;
+        text-align      : center;
+
+        max-width       : 70%;
+        _width          : 70%; /* for IE6 */
+
+        margin          : auto; /* center horizontally */
+        margin-bottom   : 2em;
+    }
+
+    .chapter .cloud li
+    {
+        display         : inline;
+        padding-right   : 10px;
+    }
+
+/* styles common to many templates */
+
+    .listing > .name,
+    .chapter > .name,
+    .section > .name
+    {
+        text-align      : center;
+        margin-top      : 2em;
+        margin-bottom   : 2em;
+    }
+
+    .chapter a:visited,
+    .entry .info a:visited,
+    .entry .more a:visited
+    {
+        color           : #0000FF;
+    }

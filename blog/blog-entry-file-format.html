@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en-gb" />
+    <meta name="description" content="&lt;p&gt;This is a user-defined placeholder for the summary of this blog entry. See the content of this blog entry for the real summary!&lt;/p&gt;" />
+    <meta name="date" content="Mon, 21 Sep 2009 21:50:32 +0100" />
+    <meta name="author" content="Mamading Ceesay" />
+    <meta name="generator" content="Rassmalog 12.0.1" />
+
+    <link rel="stylesheet" type="text/css" href="styles/screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="styles/print.css" media="print" />
+    <link rel="alternate stylesheet" type="text/css" href="styles/print.css" title="Print Preview" />
+
+      <link rel="alternate" type="application/rss+xml" href="feed.xml" title="Confessions of an Autodidactic Evangineer" />
+      <link rel="alternate" type="application/rss+xml" href="examples.xml" title="Rassmalog examples" />
+
+      
+      
+      
+      
+      
+
+    <title>File format of a blog entry &mdash; Confessions of an Autodidactic Evangineer</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <a href="index.html"><img class="icon" src="icons/tango-32x32-actions-go-home.png" alt="Home" title="Home" /></a>
+
+        &nbsp;
+        <a href="about.html"><img class="icon" src="icons/tango-32x32-apps-help-browser.png" alt="About" title="About" /></a>
+
+      &nbsp;
+      <a href="entries.html"><img class="icon" src="icons/tango-32x32-actions-edit-copy.png" alt="Entries" title="Entries" /></a>
+
+      &nbsp;
+      <a href="archives.html"><img class="icon" src="icons/tango-32x32-apps-office-calendar.png" alt="Archives" title="Archives" /></a>
+
+      &nbsp;
+      <a href="tags.html"><img class="icon" src="icons/tango-32x32-categories-applications-games.png" alt="Tags" title="Tags" /></a>
+
+        &nbsp;
+        <a href="search.html"><img class="icon" src="icons/tango-32x32-actions-system-search.png" alt="Search" title="Search" /></a>
+
+        &nbsp;
+        <a type="application/rss+xml" href="feed.xml"><img class="icon" src="icons/feed-icon-28x28.png" alt="Subscribe" title="Subscribe" /></a>
+
+      
+    </div>
+
+    <br style="display: none"/>
+    <hr style="display: none"/>
+
+    <div id="blog-entry-file-format.html" class="entry entry-solo">
+  <h1 class="name"><a href="blog-entry-file-format.html">File format of a blog entry</a></h1>
+
+    <div class="toc">Contents <ul><li>1 <a id="a9413160" href="#Adding-your-own-parameters">Adding your own parameters</a></li><li>2 <a id="a9412260" href="#source">Source of this blog entry</a></li></ul></div>
+
+  <div class="body"><p>This article serves as a reference for the file format of a blog entry.  Have a look at the source of this blog entry by reading the <tt>entries/example-entry.yaml</tt> file (whose contents are <a href="#source">shown below</a>).</p>
+<p>Here is the summary of this blog entry:</p>
+<blockquote>
+<p>This is a user-defined placeholder for the summary of this blog entry. See the content of this blog entry for the real summary!</p>
+</blockquote>
+<h1><a id="Adding-your-own-parameters" href="#a9413160" class="list" title="Return to Contents">1</a>&nbsp;&nbsp;<a href="#Adding-your-own-parameters" class="here" title="Permanent hyperlink to this section">Adding your own parameters</a></h1>
+<p>You can add arbitrary parameters to a blog entry source file (which is really a <span class="caps">YAML</span> file) and use them in the blog entry&#8217;s content (the <strong>text</strong> parameter).</p>
+<p>For example, in the source of this blog entry, you will find two custom parameters whose names begin with &#8220;your_own_parameter&#8221;. To insert the values of these parameters into the blog entry&#8217;s content, we use the following eRuby directive:</p>
+<p><code class="code" lang="rhtml"><span style="background:#eee"><span style="font-weight:bold;color:#888">&lt;%=</span> <span style="color:#33B">@entry</span>[ <span style="background-color:#fff0f0"><span style="color:#710">'</span><span style="color:#D20">name_of_the_parameter</span><span style="color:#710">'</span></span> ] <span style="font-weight:bold;color:#888">%&gt;</span></span></code></p>
+<p>Here, we access a parameter&#8217;s value by passing the parameter&#8217;s name into the [] operator of the <code class="code"><span style="color:#33B">@entry</span></code> object.</p>
+<table border="1">
+	<tr>
+		<th>Expression</th>
+		<th>Result</th>
+	</tr>
+	<tr>
+		<td><code class="code" lang="rhtml"><span style="background:#eee"><span style="font-weight:bold;color:#888">&lt;%=</span> <span style="color:#33B">@entry</span>[<span style="background-color:#fff0f0"><span style="color:#710">'</span><span style="color:#D20">your_own_parameter1</span><span style="color:#710">'</span></span>] <span style="font-weight:bold;color:#888">%&gt;</span></span></code></td>
+		<td>hello world</td>
+	</tr>
+	<tr>
+		<td><code class="code" lang="rhtml"><span style="background:#eee"><span style="font-weight:bold;color:#888">&lt;%=</span> <span style="color:#33B">@entry</span>[<span style="background-color:#fff0f0"><span style="color:#710">'</span><span style="color:#D20">your_own_parameter2</span><span style="color:#710">'</span></span>] <span style="font-weight:bold;color:#888">%&gt;</span></span></code></td>
+		<td>ruby rocks!</td>
+	</tr>
+</table>
+<h1 ><a id="source" href="#a9412260" class="list" title="Return to Contents">2</a>&nbsp;&nbsp;<a href="#source" class="here" title="Permanent hyperlink to this section">Source of this blog entry</a></h1>
+<p><pre>#
+# This is a blog entry which demonstrates the file format for all blog entries.
+# Blog entries are _plain text_ files marked up in YAML syntax. They are
+# composed of key-value pairs, known as _parameters_, whose values are defined
+# by you.
+#
+# The default set of parameters are shown below.  Of these, only the 'name' and
+# 'text' parameters are required; the other parameters are completely optional.
+#
+# For your convenience, the description of each parameter
+# below is marked with one or more of the following emblems:
+#
+# * (Required) This parameter is required.  If it is not present,
+#              then Rassmalog will ignore this blog entry file.
+#
+# * (Optional) This parameter is completely optional.
+#
+# * (eRuby) You can use eRuby directives in the value of this parameter.
+#
+# * (HTML) The value of this parameter will be transformed into HTML using the
+#          standard mechanism defined in the &lt;tt&gt;config/format.rb&lt;/tt&gt; file.
+#
+# * (Example) This parameter is bogus; it exists
+#             purely for illustrative purposes.
+#
+# In addition to the default set of parameters, you can define and use your own
+# custom parameters in this blog entry.  An example of this is shown below.
+#
+
+
+#
+# (Required) (eRuby) (HTML)
+#
+# The title of this blog entry.
+#
+name: File format of a blog entry
+
+
+#
+# (Optional) (eRuby)
+#
+# The date when this blog entry written.
+#
+# Here are some examples:
+#
+#   date: Thu, 01 Jan 1970 08:00:00 GMT
+#   date: 1970-01-01 8:00am
+#   date: 1/1/1970 8:00am
+#   date: jan 1st 1970 16:00 -08:00
+#   date: 1 january 1970
+#   date: Wed Dec 13 21:31:04 PST 2006
+#
+# You can also specify dates in other languages.  For
+# example, the following date
+#
+#   date: Thursday, 01 January 1970 03:15:00 PM
+#
+# can be written in German as:
+#
+#   date: Donnerstag, 01 Januar 1970 15:15:00
+#
+# For more information about the format of this parameter, see the documentation
+# for the Time.parse method by typing the following command at your terminal:
+#
+#   ri Time.parse
+#
+# or by visiting the following URL:
+#
+#   http://www.ruby-doc.org/core/classes/Time.html#M000297
+#
+# If you do not specify this parameter, then Rassmalog will
+# use the modification time of this source file instead.
+#
+date: Dec 8 2006 11:00pm  # put today's date and time here
+
+
+#
+# (Optional)
+#
+# The categories/labels which classify this blog entry.
+#
+tags:
+  - reference
+  - examples
+
+
+#
+# (Optional) (eRuby)
+#
+# A relative path (with respect to the &lt;tt&gt;output/&lt;/tt&gt;
+# directory) to the output HTML file for this blog entry.
+#
+output_file: blog-entry-file-format.html
+
+
+#
+# (Optional)
+#
+# Controls whether this entry is displayed in the
+# lists of tags, archives, and recent/all entries.
+#
+hide: true
+
+
+#
+# (Optional)
+#
+# Overrides the *generate_toc* parameter that is defined in the main
+# blog configuration file (&lt;tt&gt;config/blog.yaml&lt;/tt&gt;).  This parameter
+# controls whether a table of contents is generated for this blog entry.
+#
+generate_toc: true
+
+
+#
+# (Optional) (eRuby) (HTML)
+#
+# Overrides the automatic summarization mechanism, which is
+# defined in the &lt;tt&gt;config/entry.erb&lt;/tt&gt; template, by allowing
+# you to specify a predefined summary for this blog entry.
+#
+summary: |
+  This is a user-defined placeholder for the summary of this blog entry. See the content of this blog entry for the real summary!
+
+
+#
+# (Example)
+#
+# This is an example of how you can specify your own custom
+# parameters and use them in the content of this blog entry.
+#
+your_own_parameter1: hello world
+your_own_parameter2: ruby rocks!
+
+
+#
+# (Required) (eRuby) (HTML)
+#
+# The content of this blog entry.
+#
+# In this parameter, you can use the following
+# predefined variables inside eRuby directives:
+#
+# * BLOG        - data from the blog configuration file
+# * LANG        - data from the translation file
+# * ABOUT_PAGE  - the blog entry corresponding to the about page
+# * SEARCH_PAGE - the blog entry corresponding to the search page
+# * ENTRIES     - array of all blog entries (Entry objects)
+# * TAGS        - array of all tags (Section objects)
+# * ARCHIVES    - array of all archives (Section objects)
+# * FEEDS       - array of all feeds (Feed objects)
+# * @entry      - the Entry object for which we are generating HTML
+# * @summarize  - should this entry be summarized?
+# * @solo       - is this entry being rendered alone, on its own page?
+#
+body: |
+  This article serves as a reference for the file format of a blog entry.  Have a look at the source of this blog entry by reading the &lt;tt&gt;&lt;%= @entry.input_file %&gt;&lt;/tt&gt; file (whose contents are &quot;shown below&quot;:#source).
+
+  Here is the summary of this blog entry:
+
+  bq. &lt;%= @entry['summary'] %&gt;
+
+
+  h1. Adding your own parameters
+
+  You can add arbitrary parameters to a blog entry source file (which is really a YAML file) and use them in the blog entry's content (the *text* parameter).
+
+  For example, in the source of this blog entry, you will find two custom parameters whose names begin with &quot;your_own_parameter&quot;. To insert the values of these parameters into the blog entry's content, we use the following eRuby directive:
+
+  &lt;code lang=&quot;rhtml&quot;&gt;&lt;%%= @entry[ 'name_of_the_parameter' ] %&gt;&lt;/code&gt;
+
+  Here, we access a parameter's value by passing the parameter's name into the [] operator of the @@entry@ object.
+
+  |_. Expression|_. Result|
+  |&lt;code lang=&quot;rhtml&quot;&gt;&lt;%%= @entry['your_own_parameter1'] %&gt;&lt;/code&gt;|&lt;%= @entry['your_own_parameter1'] %&gt;|
+  |&lt;code lang=&quot;rhtml&quot;&gt;&lt;%%= @entry['your_own_parameter2'] %&gt;&lt;/code&gt;|&lt;%= @entry['your_own_parameter2'] %&gt;|
+
+
+  h1(#source). Source of this blog entry
+
+  &lt;pre&gt;&lt;%=h File.read(@entry.input_file) %&gt;&lt;/pre&gt;
+</pre></p>
+
+  </div>
+
+  <p class="info">
+    <img class="icon" src="icons/tango-32x32-apps-office-calendar.png" alt="Date" title="Date" />
+    Friday 08 December 2006, 11:00 PM
+
+
+      <div id="disqus_thread"></div>
+      <script type="text/javascript" src="http://disqus.com/forums/evangineer/embed.js"></script>
+      <noscript><a href="http://evangineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  </p>
+</div>
+
+<hr style="display: none"/>
+
+
+
+    <p class="credits">
+      <img class="icon" src="icons/tango-32x32-apps-system-users.png" alt="Author" title="Author" />
+      <a href="mailto:&#109;&#97;&#109;&#97;&#100;&#105;&#110;&#103;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Mamading Ceesay</a>
+      <br/>
+      <img class="icon" src="icons/tango-32x32-devices-printer.png" alt="Generator" title="Generator" />
+      <a href="http://rassmalog.rubyforge.org">Rassmalog 12.0.1</a>
+      <br/>
+      <img class="icon" src="icons/tango-32x32-categories-applications-graphics.png" alt="Icons" title="Icons" />
+      <a href="http://tango.freedesktop.org/Tango_Icon_Library">Tango Icon Theme 0.8.1</a>
+    </p>
+    <!--
+    <div class="sidebar">
+      <h3>Linklove</h3>
+      <ul>
+        <li><a href="http://worldchanging.com">WorldChanging</a></li>
+        <li><a href="http://www.opendemocracy.net">openDemocracy</a></li>
+        <li><a href="http://www.appropedia.org">Appropedia</a></li>
+        <li><a href="http://www.globalswadeshi.net">Global Swadeshi</a></li>
+      </ul>
+    </div>
+    -->
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      var pageTracker = _gat._getTracker("UA-6250279-1");
+      pageTracker._trackPageview();
+    </script>
+    
+  </body>
+</html>

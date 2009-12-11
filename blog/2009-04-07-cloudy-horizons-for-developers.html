@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="en-gb" />
+    <meta name="description" content="&lt;p&gt;The following is in part a response to &lt;a href=&quot;http://innovate.direct.gov.uk/2009/03/25/prototyping-in-the-cloud/&quot;&gt;Directgov Innovate&amp;#8217;s Prototyping in the Cloud blog post&lt;/a&gt; &amp;amp; something of a summary of my own views on the cloud as a web developer.&lt;/p&gt;" />
+      <meta name="keywords" content="amazon, amazon web services, cloud computing, deployment, directgov, eucalyptus, force.com, google, google app engine, iaas, joyent, paas, python, ruby, salesforce.com, server-side javascript, software, technical, technology, ubuntu, web" />
+    <meta name="date" content="Mon, 21 Sep 2009 21:50:32 +0100" />
+    <meta name="author" content="Mamading Ceesay" />
+    <meta name="generator" content="Rassmalog 12.0.1" />
+
+    <link rel="stylesheet" type="text/css" href="styles/screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="styles/print.css" media="print" />
+    <link rel="alternate stylesheet" type="text/css" href="styles/print.css" title="Print Preview" />
+
+      <link rel="alternate" type="application/rss+xml" href="feed.xml" title="Confessions of an Autodidactic Evangineer" />
+      <link rel="alternate" type="application/rss+xml" href="examples.xml" title="Rassmalog examples" />
+
+      <link rel="first" href="example-paths.html" title="First: An entry from the input/ directory" />
+      <link rel="prev" href="2009-03-31-the-economies-of-agility-and-disrupting-the-nature-of-the-firm.html" title="Previous: The Economies of Agility and Disrupting the Nature of the Firm" />
+      <link rel="up" href="entries.html#a2009-04-07-cloudy-horizons-for-developers.html" title="Up: Entries" />
+      <link rel="next" href="2009-07-21-the-cult-of-done-doing-things-badly-dtb-and-blogging-more.html" title="Next: The Cult of Done, Doing Things Badly (DTB) and Blogging More" />
+      <link rel="last" href="2009-09-21-a-new-kind-of-business.html" title="Last: A New Kind of Business" />
+
+    <title>Cloudy Horizons for Developers &mdash; Confessions of an Autodidactic Evangineer</title>
+  </head>
+  <body>
+    <div class="navigation">
+      <a href="index.html"><img class="icon" src="icons/tango-32x32-actions-go-home.png" alt="Home" title="Home" /></a>
+
+        &nbsp;
+        <a href="about.html"><img class="icon" src="icons/tango-32x32-apps-help-browser.png" alt="About" title="About" /></a>
+
+      &nbsp;
+      <span class="current"><a href="entries.html"><img class="icon" src="icons/tango-32x32-actions-edit-copy.png" alt="Entries" title="Entries" /></a></span>
+
+      &nbsp;
+      <a href="archives.html"><img class="icon" src="icons/tango-32x32-apps-office-calendar.png" alt="Archives" title="Archives" /></a>
+
+      &nbsp;
+      <a href="tags.html"><img class="icon" src="icons/tango-32x32-categories-applications-games.png" alt="Tags" title="Tags" /></a>
+
+        &nbsp;
+        <a href="search.html"><img class="icon" src="icons/tango-32x32-actions-system-search.png" alt="Search" title="Search" /></a>
+
+        &nbsp;
+        <a type="application/rss+xml" href="feed.xml"><img class="icon" src="icons/feed-icon-28x28.png" alt="Subscribe" title="Subscribe" /></a>
+
+      <br/><br/><a href="example-paths.html"><img class="icon" src="icons/tango-32x32-actions-go-first.png" alt="First" title="First: An entry from the input/ directory" /></a> &nbsp; <a href="2009-03-31-the-economies-of-agility-and-disrupting-the-nature-of-the-firm.html"><img class="icon" src="icons/tango-32x32-actions-go-previous.png" alt="Previous" title="Previous: The Economies of Agility and Disrupting the Nature of the Firm" /></a> &nbsp; <a href="entries.html#a2009-04-07-cloudy-horizons-for-developers.html"><img class="icon" src="icons/tango-32x32-actions-go-up.png" alt="Up" title="Up: Entries" /></a> &nbsp; <a href="2009-07-21-the-cult-of-done-doing-things-badly-dtb-and-blogging-more.html"><img class="icon" src="icons/tango-32x32-actions-go-next.png" alt="Next" title="Next: The Cult of Done, Doing Things Badly (DTB) and Blogging More" /></a> &nbsp; <a href="2009-09-21-a-new-kind-of-business.html"><img class="icon" src="icons/tango-32x32-actions-go-last.png" alt="Last" title="Last: A New Kind of Business" /></a>
+    </div>
+
+    <br style="display: none"/>
+    <hr style="display: none"/>
+
+    <div id="a2009-04-07-cloudy-horizons-for-developers.html" class="entry entry-solo">
+  <h1 class="name"><a href="2009-04-07-cloudy-horizons-for-developers.html">Cloudy Horizons for Developers</a></h1>
+
+
+  <div class="body"><p>The following is in part a response to <a href="http://innovate.direct.gov.uk/2009/03/25/prototyping-in-the-cloud/">Directgov Innovate&#8217;s Prototyping in the Cloud blog post</a> &amp; something of a summary of my own views on the cloud as a web developer.</p>
+<p>Cloud hosting as described by the aforementioned post, is what&#8217;s known as <a href="http://en.wikipedia.org/wiki/Infrastructure_as_a_Service" title="IaaS">Infrastructure as a Service</a>.  The most well known available services along these lines are <a href="http://aws.amazon.com/">Amazon Web Services</a> like EC2 and S3.  Another service along those lines is <a href="http://www.mosso.com">Mosso also known as the Rackspace Cloud</a>.  The open source equivalent of <span class="caps">AWS</span> is <a href="http://eucalyptus.cs.ucsb.edu/wiki">Eucalyptus</a> which is <a href="https://lists.ubuntu.com/archives/ubuntu-devel-announce/2009-February/000536.html">being incorporated into the Ubuntu Server release</a>.  Having looked at the APIs for the new <a href="http://www.sun.com/solutions/cloudcomputing/index.jsp">Cloud offering from Sun</a>, it fits into this category of cloud hosting.</p>
+<p>Speaking as a web developer, I&#8217;ve gotten tired of wrestling with system administration issues when deploying/installing web applications.  Anything that helps ease deployment removes hassle from the process &amp; allows me to spend my time on more useful activities.  There are developer oriented deployment tools like <a href="http://www.capify.org/">Capistrano</a> and <a href="http://www.nongnu.org/fab/">Fabric</a> that can be helpful in this regards.</p>
+<p>In the context of cloud computing, a solution for taking the system administration hassle out of deployment is what&#8217;s called <a href="http://en.wikipedia.org/wiki/PaaS" title="PaaS">Platform as a Service</a>.  The most notable examples of PaaS from my perspective are <a href="http://code.google.com/appengine/">Google App Engine</a> and <a href="http://heroku.com/">Heroku</a>.  The reasons they are notable in my view is that Django &amp; other Python web developers can deploy modified versions of their apps onto App Engine and Rails &amp; other Ruby web developers can deploy their apps onto Heroku.  <a href="http://www.salesforce.com/platform/">Force.com</a> from salesforce.com is also in the PaaS category.</p>
+<p>An emergent trend that I&#8217;ve found interesting regarding PaaS is the rise of <a href="http://en.wikipedia.org/wiki/Server-side_JavaScript">Server-Side Javascript</a> in a break from established server-side dynamic languages like <span class="caps">PHP</span>, Perl, Python and Ruby.  You see this in <a href="http://appjet.com/">Appjet</a>, <a href="http://www.10gen.com/">10gen</a> and <a href="http://reasonablysmart.com/">Reasonably Smart Platform</a>.  Whereas Appjet is exclusively Javascript based, 10gen and Reasonably Smart are in various stages of incorporating support for Python and Ruby amongst others.</p>
+<p>10gen&#8217;s application server <a href="http://www.babbleapp.org/">Babble</a> is written in Java, with the Javascript support courtesy of Rhino.  Support for Python and Ruby is being integrated via Jython and JRuby respectively.  Reasonably Smart Platform is written in Perl, with Javascript via Spidermonkey.  The intention is eventually to harness the <a href="https://wiki.mozilla.org/Tamarin:IronMonkey">IronMonkey</a> project to integrate Python and Ruby via <a href="http://www.codeplex.com/IronPython">IronPython</a> and <a href="http://www.ironruby.net/">IronRuby</a>.</p>
+<p>10gen and Reasonably Smart have announced major changes this year.  10gen is shifting emphasis to its cloud database <a href="http://www.mongodb.org/display/DOCS/Home">MongoDB</a> based on demand for related support &amp; services and has changed the open source license on Babble to the Apache license in order to invite greater engagement from open source developers.  Reasonably Smart has been acquired by the major hosting provider <a href="http://www.joyent.com/">Joyent</a> who have an IaaS offering called <a href="http://www.joyent.com/accelerator/">Accelerators</a>.</p>
+<p>So all that aside, what do I recommend to Directgov Innovate?  1) Use Amazon Web Services for IaaS cloud hosting.  Issues have been raised about data protection.  Amazon has European <span class="caps">AWS</span> farms that you can specifically use to avoid the data leaving the EU.  2) Look at ways of easing deployment for developers, possibly by leveraging deployment tools like Capistrano &amp; Fabric making it easier for developers using major web frameworks like Django &amp; Rails, alternatively incorporating open source PaaS on top of <span class="caps">AWS</span> or by implementing <a href="http://en.wikipedia.org/wiki/Multitenant">multitenant</a> environments like <a href="http://www.viget.com/extend/projects">Tyrant</a>. 3) Hire someone to actually work out the details &amp; work with you to implement it!</p>
+
+  </div>
+
+  <p class="info">
+    <img class="icon" src="icons/tango-32x32-apps-office-calendar.png" alt="Date" title="Date" />
+    <a href="archives-april-2009.html#a2009-04-07-cloudy-horizons-for-developers.html" title="April 2009">Tuesday 07 April 2009, 01:19 AM</a>
+
+      <br/>
+      <img class="icon" src="icons/tango-32x32-categories-applications-games.png" alt="Tags" title="Tags" />
+      <a href="tags-amazon.html#a2009-04-07-cloudy-horizons-for-developers.html">amazon</a> &middot; <a href="tags-amazon-web-services.html#a2009-04-07-cloudy-horizons-for-developers.html">amazon web services</a> &middot; <a href="tags-cloud-computing.html#a2009-04-07-cloudy-horizons-for-developers.html">cloud computing</a> &middot; <a href="tags-deployment.html#a2009-04-07-cloudy-horizons-for-developers.html">deployment</a> &middot; <a href="tags-directgov.html#a2009-04-07-cloudy-horizons-for-developers.html">directgov</a> &middot; <a href="tags-eucalyptus.html#a2009-04-07-cloudy-horizons-for-developers.html">eucalyptus</a> &middot; <a href="tags-force-com.html#a2009-04-07-cloudy-horizons-for-developers.html">force.com</a> &middot; <a href="tags-google.html#a2009-04-07-cloudy-horizons-for-developers.html">google</a> &middot; <a href="tags-google-app-engine.html#a2009-04-07-cloudy-horizons-for-developers.html">google app engine</a> &middot; <a href="tags-iaas.html#a2009-04-07-cloudy-horizons-for-developers.html">iaas</a> &middot; <a href="tags-joyent.html#a2009-04-07-cloudy-horizons-for-developers.html">joyent</a> &middot; <a href="tags-paas.html#a2009-04-07-cloudy-horizons-for-developers.html">paas</a> &middot; <a href="tags-python.html#a2009-04-07-cloudy-horizons-for-developers.html">python</a> &middot; <a href="tags-ruby.html#a2009-04-07-cloudy-horizons-for-developers.html">ruby</a> &middot; <a href="tags-salesforce-com.html#a2009-04-07-cloudy-horizons-for-developers.html">salesforce.com</a> &middot; <a href="tags-server-side-javascript.html#a2009-04-07-cloudy-horizons-for-developers.html">server-side javascript</a> &middot; <a href="tags-software.html#a2009-04-07-cloudy-horizons-for-developers.html">software</a> &middot; <a href="tags-technical.html#a2009-04-07-cloudy-horizons-for-developers.html">technical</a> &middot; <a href="tags-technology.html#a2009-04-07-cloudy-horizons-for-developers.html">technology</a> &middot; <a href="tags-ubuntu.html#a2009-04-07-cloudy-horizons-for-developers.html">ubuntu</a> &middot; <a href="tags-web.html#a2009-04-07-cloudy-horizons-for-developers.html">web</a>
+
+      <div id="disqus_thread"></div>
+      <script type="text/javascript" src="http://disqus.com/forums/evangineer/embed.js"></script>
+      <noscript><a href="http://evangineer.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  </p>
+</div>
+
+<hr style="display: none"/>
+
+
+
+    <p class="credits">
+      <img class="icon" src="icons/tango-32x32-apps-system-users.png" alt="Author" title="Author" />
+      <a href="mailto:&#109;&#97;&#109;&#97;&#100;&#105;&#110;&#103;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">Mamading Ceesay</a>
+      <br/>
+      <img class="icon" src="icons/tango-32x32-devices-printer.png" alt="Generator" title="Generator" />
+      <a href="http://rassmalog.rubyforge.org">Rassmalog 12.0.1</a>
+      <br/>
+      <img class="icon" src="icons/tango-32x32-categories-applications-graphics.png" alt="Icons" title="Icons" />
+      <a href="http://tango.freedesktop.org/Tango_Icon_Library">Tango Icon Theme 0.8.1</a>
+    </p>
+    <!--
+    <div class="sidebar">
+      <h3>Linklove</h3>
+      <ul>
+        <li><a href="http://worldchanging.com">WorldChanging</a></li>
+        <li><a href="http://www.opendemocracy.net">openDemocracy</a></li>
+        <li><a href="http://www.appropedia.org">Appropedia</a></li>
+        <li><a href="http://www.globalswadeshi.net">Global Swadeshi</a></li>
+      </ul>
+    </div>
+    -->
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      var pageTracker = _gat._getTracker("UA-6250279-1");
+      pageTracker._trackPageview();
+    </script>
+    
+  </body>
+</html>

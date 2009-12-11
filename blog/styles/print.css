@@ -1,0 +1,80 @@
+@import 'common.css';
+
+body
+{
+    max-width        : none;
+}
+
+/* source code */
+
+    tt
+    {
+        background-color  : inherit;
+        font-weight       : normal;
+    }
+
+    pre,
+    .code
+    {
+        border            : none;
+        background-color  : inherit;
+    }
+
+/* headings */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+    {
+        font-weight      : normal;
+    }
+
+/* hyperlinks */
+
+    /* blend all hyperlinks with normal text */
+    a:link,
+    a:visited
+    {
+        color             : #000000;
+        text-decoration   : none;
+    }
+
+    /* emphasize external and cross-reference hyperlinks */
+    a:not([href^="#"]):link,
+    a:not([href^="#"]):visited
+    {
+        color             : #0000FF;
+        text-decoration   : underline;
+        font-weight       : bolder;
+    }
+
+    /* show URL of destination for external hyperlinks */
+    a:not([href^="#"]):after
+    {
+        content           : " " attr(href);
+        font-family       : Consolas, "Lucida Console", monospace;
+    }
+
+    a:after
+    {
+        font-weight       : normal;
+        font-size         : smaller;
+    }
+
+/* styles for config/html.erb */
+
+    .navigation
+    {
+        display          : none;
+    }
+
+/* styles for config/chapter.erb */
+
+    .chapter .cloud
+    {
+        display: none;
+    }
+
