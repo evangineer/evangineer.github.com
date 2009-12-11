@@ -1,25 +1,19 @@
 --- 
 contact: 
 - name: email
-  url: mailto:chris@ozmm.org
-  description: chris@ozmm.org
+  url: mailto: mamading@gmail.com
+  description: mamading@gmail.com
 - name: github
-  url: http://github.com/defunkt
+  url: http://github.com/evangineer
   description: social coding
 - name: twitter
-  url: http://twitter.com/defunkt
-  description: high inanity
-- name: defunktion junktion
-  url: http://defunktionjunktion.typepad.com/blog/
-  description: tumblin&#8217;
+  url: http://twitter.com/evangineer
+  description: drink from the firehose 
 - name: flickr
-  url: http://flickr.com/photos/ozmm
-  description: iphone photos
+  url: http://www.flickr.com/photos/evangineer/
+  description: blackberry photos
 - name: blog
-  url: http://ozmm.org
-  description: ones zeros majors and minors
-- name: baconfile
-  url: http://baconfile.com/defunkt/
-  description: tasty files
+  url: http://mamading.appspot.com/blog/
+  description: confessions of an autodidactic evangineer
 width: 2048
 ---
